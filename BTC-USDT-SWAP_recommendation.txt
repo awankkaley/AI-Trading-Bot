@@ -2,45 +2,44 @@
 ╔══════════════════════════════════════════════════════════════════╗
 ║                     CRYPTO TRADING RECOMMENDATION                 ║
 ║                                                                  ║
-║  Asset: BTC-USDT-SWAP                  Date: 2025-05-30 02:16:13 ║
+║  Asset: BTC-USDT-SWAP                  Date: 2025-05-30 02:45:42 ║
 ╚══════════════════════════════════════════════════════════════════╝
 
 ┌──────────────────────────────────────────────────────────────────┐
 │                         MARKET DATA                              │
 ├──────────────────────────────────────────────────────────────────┤
-│ Last Price:            $106,466.10                                  │
-│ Bid/Ask:               $106,443.70/$106,466.80                       │
+│ Last Price:            $106,237.10                                  │
+│ Bid/Ask:               $106,235.70/$106,348.90                       │
 │ Funding Rate:          0.0001000000000000                                     │
 │ Next Funding Time:     2025-05-30 08:00:00 │
-│ Open Interest (USD):   230553000.71                                │
-│ Open Interest (Coin):  2305530.0071                                     │
+│ Open Interest (USD):   230594828.58000001                                │
+│ Open Interest (Coin):  2305948.2858000001                                     │
 └──────────────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────────────┐
 │                     TECHNICAL ANALYSIS                           │
 ├──────────────────────────────────────────────────────────────────┤
 
-│ RSI (14):              42.35 - Neutral                          │
-│ MACD:                  -470.55 - Bearish                          │
+│ RSI (14):              33.36 - Neutral                          │
+│ MACD:                  -466.95 - Bearish                          │
 │ Price in BB:           Near Lower Band                         │
-│ Moving Avg Cross:      NEUTRAL                                 │
-│ Volume Trend:          DECREASING                              │
-│ Price Volatility:      0.41%                                   │
+│ Moving Avg Cross:      BEARISH                                 │
+│ Volume Trend:          INCREASING                              │
+│ Price Volatility:      0.40%                                   │
 │ Support Level:         $105,894.90                                │
-│ Resistance Level:      $108,250.00                                │
+│ Resistance Level:      $107,777.00                                │
 └──────────────────────────────────────────────────────────────────┘
 ┌──────────────────────────────────────────────────────────────────┐
 │                   TRADING RECOMMENDATION                         │
 ├──────────────────────────────────────────────────────────────────┤
 │ Recommendation:        HOLD                                    │
 │                                                                  │
-│ Confidence: 5%                                               │
-│ [█░░░░░░░░░░░░░░░░░░░] │
+│ Confidence: 0%                                               │
+│ [░░░░░░░░░░░░░░░░░░░░] │
 │                                                                  │
 │ Reasoning:                                                       │
 │ • Technical indicators are mixed                                    │
-│ • RSI is neutral at 42.35                                           │
-│ • Weak trend (strength: 0.00)                                       │
+│ • Weak trend (strength: 0.49)                                       │
 │ • Low confidence in signals suggests holding position               │
 └──────────────────────────────────────────────────────────────────┘
 ┌──────────────────────────────────────────────────────────────────┐

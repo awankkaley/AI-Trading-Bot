@@ -68,6 +68,51 @@ def fetch_candlestick_data(instId: str, bar: str, limit_months: int = 3):
     return res
 
 
+
+def init_fetch_candlestick_data(instId: str, bar: str, limit_months: int = 3):
+    res = []
+    after = None
+
+    # Calculate the timestamp limit for the specified number of months
+    current_timestamp = int(time.time() * 1000)  # Current time in milliseconds
+    three_months_ago = current_timestamp - (
+        limit_months * 30 * 24 * 60 * 60 * 1000
+    )  # Approximate 3 months in milliseconds
+
+    # Backup file path
+    backup_file = f"{instId}_{bar}_candlesticks.json"
+
+    # Load existing data from backup if available
+    if os.path.exists(backup_file):
+        with open(backup_file, "r") as f:
+            res = json.load(f)
+            after = res[-1][0]  # Use the last timestamp from the backup
+
+    while True:
+        params = {"instId": instId, "bar": bar}
+        if after:
+            params["after"] = after
+        batch = get_history_candlesticks(**params)
+        if not batch:
+            break
+        res += batch  # Add new data at the end
+        # Assume the timestamp is the last element in each candle row
+        latest_ts = batch[-1][0]
+        # Convert latest_ts to integer for comparison
+        latest_ts = int(latest_ts)
+        if after == latest_ts or latest_ts < three_months_ago:
+            break  # Prevent infinite loop or exceed the time limit
+        after = latest_ts
+
+    # Save updated data to backup file
+    with open(backup_file, "w") as f:
+        json.dump(res, f)
+
+    return res
+
+
+
+
 def fetch_all_market_data(instId: str, bar: str, limit_months: int = 3) -> Dict[str, Any]:
     """
     Fetches all relevant market data including candlesticks, funding rates, open interest, etc.
@@ -139,4 +184,5 @@ def fetch_all_market_data(instId: str, bar: str, limit_months: int = 3) -> Dict[
 # Example usage:
 if __name__ == "__main__":
     # Fetch 3 months of data for BTC-USDT-SWAP with 15-minute candlesticks
+    # print(init_fetch_candlestick_data("BTC-USDT-SWAP", "15m", 3))
     market_data = fetch_all_market_data("BTC-USDT-SWAP", "15m", 3)
